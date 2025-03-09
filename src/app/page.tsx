@@ -5,7 +5,7 @@ import ProjectsComponent from "./components/projects/Projects.component";
 
 export default function Home() {
   return (
-    <div className=" bg-[#FFF1E4] text-black">
+    <div className=" bg-[#FFF1E4] text-black font-inter">
       <LandingComponent />
       <div className=" px-[2rem]">
         <AboutComponent />
