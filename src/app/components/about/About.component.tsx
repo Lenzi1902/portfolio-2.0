@@ -27,9 +27,9 @@ const AboutComponent = () => {
     });
 
     const lenis = new Lenis();
-    lenis.on("scroll", (e) => {
-      console.log(e);
-    });
+    // lenis.on("scroll", (e) => {
+    //   console.log(e);
+    // });
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -37,7 +37,7 @@ const AboutComponent = () => {
     requestAnimationFrame(raf);
   }, []);
   return (
-    <div className="min-h-[140vh] max-w-screen px-[5rem] py-[3rem] flex flex-col gap-[3rem]">
+    <section className="min-h-[140vh] max-w-screen px-[5rem] py-[3rem] flex flex-col gap-[3rem]" id="section-about" wb-section="about">
       <h1 className=" font-inter font-extrabold text-[4.313rem]  reveal-text">Nice to meet you all.</h1>
       <div className=" text-[2rem] flex flex-col gap-[2rem] w-[90%]">
         <p className="reveal-text">Hi, I&apos;m Anak Agung, a passionate Full-Stack Developer with a strong interest in building scalable and efficient web applications. Currently, I&apos;m pursuing a degree in Information Systems, where I&apos;m deepening my knowledge of software development, databases, and system architecture.</p>
@@ -46,7 +46,7 @@ const AboutComponent = () => {
           amazing together!
         </p>
       </div>
-    </div>
+    </section>
   );
 };
 
