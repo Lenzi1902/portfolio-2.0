@@ -21,7 +21,6 @@ export const initProjectAnimation = () => {
       start: "top bottom",
       end: "top 20%",
       scrub: 2,
-      markers: true,
     },
   });
 
