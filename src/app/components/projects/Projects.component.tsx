@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { initTextanimation } from "./animation/text.animation";
 import { initProjectAnimation } from "./animation/project.animation";
+import { projectList } from "./project.config";
 
 const ProjectsComponent = () => {
   useEffect(() => {
@@ -26,10 +27,9 @@ const ProjectsComponent = () => {
         </section>
 
         <section className="min-h-screen">
-          <div className="img" style={{ backgroundImage: `url(${"https://assets.codepen.io/2621168/img1.jpg"})` }}></div>
-          <div className="img" style={{ backgroundImage: `url(${"https://assets.codepen.io/2621168/img1.jpg"})` }}></div>
-          <div className="img" style={{ backgroundImage: `url(${"https://assets.codepen.io/2621168/img1.jpg"})` }}></div>
-          <div className="img" style={{ backgroundImage: `url(${"https://assets.codepen.io/2621168/img1.jpg"})` }}></div>
+          {projectList.map((data, index) => (
+            <div key={index} className="img" style={{ backgroundImage: `url(${data.src})` }}></div>
+          ))}
         </section>
 
         <section className="min-h-screen"></section>
