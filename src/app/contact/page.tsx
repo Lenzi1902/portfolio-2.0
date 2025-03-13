@@ -1,8 +1,8 @@
 const page = () => {
   return (
-    <div>
+    <section className=" px-[2rem]">
       <div>test</div>
-    </div>
+    </section>
   );
 };
 

@@ -5,3 +5,35 @@
   --color-contactme: oklch(24.78% 0 0);
   --color-avocado-600: oklch(0.53 0.12 118.34);
 }
+
+.gallery {
+  height: 200vh;
+}
+.test section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 100vh;
+  margin: 0 auto;
+}
+.img {
+  width: 100%;
+  height: 700px;
+  position: relative;
+  background-size: cover;
+  z-index: 1;
+
+  &:before {
+    content: "";
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    border-right: 1px solid black;
+  }
+}
+
+.line {
+  border-right: 1px solid black;
+}
