@@ -10,8 +10,8 @@ const ProjectsComponent = () => {
     initProjectAnimation();
   }, []);
   return (
-    <>
-      <section className="min-h-screen max-w-screen section-projects" id="section-projects" wb-section="projects">
+    <section id="section-projects" wb-section="projects">
+      <section className="min-h-screen max-w-screen section-projects">
         <div className=" flex justify-center">
           <div className=" w-[83%] leading-tight title-projects">
             <h1 className=" font-black text-[9.375rem] text-center reveal-text-projects">LET’S DO THIS TOGETHER</h1>
@@ -34,7 +34,7 @@ const ProjectsComponent = () => {
 
         <section className="min-h-screen"></section>
       </div>
-    </>
+    </section>
   );
 };
 
