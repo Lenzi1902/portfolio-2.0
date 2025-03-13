@@ -28,9 +28,6 @@ const ProjectsComponent = () => {
     });
 
     const lenis = new Lenis();
-    // lenis.on("scroll", (e) => {
-    //   console.log(e);
-    // });
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -38,9 +35,9 @@ const ProjectsComponent = () => {
     requestAnimationFrame(raf);
   }, []);
   return (
-    <section className="min-h-screen max-w-screen" id="section-projects" wb-section="projects">
+    <section className="min-h-screen max-w-screen section-projects" id="section-projects" wb-section="projects">
       <div className=" flex justify-center">
-        <div className=" w-[83%] leading-tight">
+        <div className=" w-[83%] leading-tight title-projects">
           <h1 className=" font-black text-[9.375rem] text-center reveal-text-projects">LET’S DO THIS TOGETHER</h1>
           <p className=" text-[2rem] text-center reveal-text">We believe that the best work comes from collaboration. Understanding you deeply. Sharing your vision and committing to your future. If that’s the kind of relationship you’re looking for, let’s talk.</p>
         </div>

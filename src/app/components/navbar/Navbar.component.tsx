@@ -36,8 +36,8 @@ const NavbarComponent = () => {
   }, []);
 
   return (
-    <div className="flex justify-center">
-      <ul className="w-[51rem] h-[4.5rem] fixed text-white font-inter bg-[url('/backgroundNavbar.png')] text-[1rem] flex items-center px-[0.5rem] justify-between bottom-[2rem]">
+    <div className="flex justify-center container-nav">
+      <ul className="w-[51rem] h-[4.5rem] fixed text-white font-inter bg-[url('/backgroundNavbar.png')] text-[1rem] flex items-center px-[0.5rem] justify-between bottom-[2rem] z-[999]">
         {navbarLink.map((data, index) => (
           <li key={index} wb-nav-link={data.customAttribute} className="relative overflow-hidden rounded-[0.813rem]">
             <Link href={data.url} className="w-[10rem] h-[3.75rem] flex justify-center items-center z-10">
@@ -47,7 +47,7 @@ const NavbarComponent = () => {
           </li>
         ))}
         <li>
-          <Link href={"#"} className="w-[13.25rem] h-[3.75rem] bg-white flex rounded-[0.813rem] text-black justify-center items-center">
+          <Link href={"/contact"} className="w-[13.25rem] h-[3.75rem] bg-white flex rounded-[0.813rem] text-black justify-center items-center">
             CONTACT US
           </Link>
         </li>
