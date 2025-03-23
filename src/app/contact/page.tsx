@@ -1,3 +1,4 @@
+"use client";
 import LinkMediaSocialContact from "./component/LinkMediaSocialContact";
 import TopLanding from "./component/TopLanding";
 import FormContact from "./form/FormContact";

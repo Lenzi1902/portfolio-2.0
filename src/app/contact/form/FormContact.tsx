@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import GsapMagnetic from "@/app/common/GsapMagnetic";
 const formSchema = z.object({
   email: z.string().min(1, "Email is required"),
   name: z.string().min(1, "Name is required"),
@@ -77,9 +78,11 @@ const FormContact = () => {
             )}
           />
           <div className=" w-full h-full flex justify-end ">
-            <Button type="submit" className="h-[6rem] w-[6rem] rounded-full cursor-pointer hover:bg-black font-semibold">
-              Send it
-            </Button>
+            <GsapMagnetic>
+              <Button type="submit" className="h-[6rem] w-[6rem] rounded-full cursor-pointer hover:bg-black font-semibold">
+                Send it
+              </Button>
+            </GsapMagnetic>
           </div>
         </form>
       </Form>
