@@ -7,7 +7,9 @@ const TopLanding = () => {
   return (
     <div className="max-w-screen flex justify-between items-center text-[2rem] font-semibold relative z-[3] px-[2rem] py-[2rem]">
       <GsapMagnetic>
-        <h1 className="cursor-pointer">AGUNG GEDE</h1>
+        <div className=" w-[14rem] overflow-hidden group">
+          <h1 className="cursor-pointer whitespace-nowrap group-hover:translate-x-[-100%] transition-all duration-1000">AGUNG GEDE FullStack web</h1>
+        </div>
       </GsapMagnetic>
       <GsapMagnetic>
         <TranisitionLink href={"/"} className=" cursor-pointer">
