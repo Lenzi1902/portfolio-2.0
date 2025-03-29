@@ -3,6 +3,7 @@ import Link from "next/link";
 import { navbarLink } from "./config";
 import gsap, { ScrollTrigger } from "gsap/all";
 import { useEffect } from "react";
+import TranisitionLink from "@/app/utils/TranisitionLink";
 
 const NavbarComponent = () => {
   useEffect(() => {
@@ -47,9 +48,7 @@ const NavbarComponent = () => {
           </li>
         ))}
         <li>
-          <Link href={"/contact"} className="w-[13.25rem] h-[3.75rem] bg-white flex rounded-[0.813rem] text-black justify-center items-center">
-            CONTACT US
-          </Link>
+          <TranisitionLink label="CONTACT US" href={"/contact"} className="cursor-pointer w-[13.25rem] h-[3.75rem] bg-white flex rounded-[0.813rem] text-black justify-center items-center"></TranisitionLink>
         </li>
       </ul>
     </div>

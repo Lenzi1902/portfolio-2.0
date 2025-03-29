@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import GsapMagnetic from "@/app/common/GsapMagnetic";
-import Link from "next/link";
+import TranisitionLink from "@/app/utils/TranisitionLink";
 
 const TopLanding = () => {
   return (
@@ -10,9 +10,9 @@ const TopLanding = () => {
         <h1 className="cursor-pointer">AGUNG GEDE</h1>
       </GsapMagnetic>
       <GsapMagnetic>
-        <Link href={"/"}>
+        <TranisitionLink href={"/"} className=" cursor-pointer">
           <img src={"./logo.png"} alt={""} className=" w-[2.8rem]" />
-        </Link>
+        </TranisitionLink>
       </GsapMagnetic>
     </div>
   );
