@@ -42,7 +42,7 @@ const LandingComponent = () => {
     >
       <div className=" px-[2rem] py-[2rem]">
         <TopLanding />
-        <div className=" text-[6rem] font-bold absolute z-[1]">
+        <div className=" text-[3rem] md:text-[6rem] font-bold absolute z-[1] top-[30%] md:top-[20%]">
           <h1>A FRONTEND AND </h1>
           <h1>BACKEND WEB </h1>
           <h1>DEVELOPERS</h1>
@@ -50,7 +50,7 @@ const LandingComponent = () => {
       </div>
       <div ref={yellowRef} className=" absolute w-screen h-screen z-[2] bg-landing-gray font-inter">
         <div className=" flex justify-end items-center w-screen h-screen px-[10rem]">
-          <h1 className=" text-[4rem] font-semibold">HELLO I’M AGUNG</h1>
+          <h1 className=" text-[3rem] md:text-[4rem] font-semibold">HELLO I’M AGUNG</h1>
         </div>
       </div>
     </section>
