@@ -1,35 +1,18 @@
 import gsap, { ScrollTrigger } from "gsap/all";
-import Lenis from "lenis";
 
-export const initProjectAnimation = () => {
+export const initProjectAnimation = (isMobile: boolean) => {
+  const startValue = isMobile ? "top 30%" : "top top";
+  const endValue = isMobile ? "bottom 40%" : "bottom 40%";
   gsap.registerPlugin(ScrollTrigger);
 
-  const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-  });
-
-  function raf(time: number) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
-
-  const tl = gsap.timeline({
+  gsap.from(".section-projects", {
     scrollTrigger: {
-      trigger: ".img",
-      start: "top bottom",
-      end: "top 20%",
-      scrub: 2,
+      trigger: ".section-projects",
+      start: startValue,
+      end: endValue,
+      scrub: true,
+      pin: ".section-projects",
+      markers: true,
     },
   });
-
-  tl.to(".img", {
-    stagger: 0.2,
-    y: -700,
-  });
-
-  return () => {
-    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-  };
 };
