@@ -34,7 +34,11 @@ const GsapMagnetic = ({ children }: Props) => {
     };
   }, []);
 
-  return <div ref={ref}>{children}</div>;
+  return (
+    <div ref={ref} className="z-[6] cursor-pointer">
+      {children}
+    </div>
+  );
 };
 
 export default GsapMagnetic;
