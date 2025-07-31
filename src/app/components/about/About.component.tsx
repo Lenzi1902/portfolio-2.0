@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
 import Lenis from "lenis";
 import { useEffect } from "react";
+import { SkillStack } from "./techAboutList";
 
 const AboutComponent = () => {
   useEffect(() => {
@@ -27,10 +28,17 @@ const AboutComponent = () => {
       });
     });
 
+    gsap.to(".tech-skill", {
+      duration: 60,
+      ease: "none",
+      x: "-=2952", //move each box 500px to right
+      modifiers: {
+        x: gsap.utils.unitize((x) => parseFloat(x) % 2952), //force x value to be between 0 and 500 using modulus
+      },
+      repeat: -1,
+    });
+
     const lenis = new Lenis();
-    // lenis.on("scroll", (e) => {
-    //   console.log(e);
-    // });
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -48,6 +56,21 @@ const AboutComponent = () => {
           <p className="reveal-text">I&apos;m Anak Agung, a Full-Stack Developer passionate about building fast, scalable web apps.</p>
           <p className="reveal-text">Currently studying Information Systems, I enjoy working on both front-end and back-end crafting smooth user experiences and robust server logic.</p>
           <p className="reveal-text">Always curious, always learning especially new tools and tech to build better solutions.</p>
+        </div>
+        <div className="w-[100%] h-[100%] flex flex-col justify-center">
+          <div className="h-[10.25rem] w-full flex items-center gap-[1rem] relative overflow-hidden">
+            <div className="w-[10.563rem] h-[10.25rem] absolute left-0 bg-[linear-gradient(to_left,_#FFF1E4B8_0%,_#FFF1E4_39%,_#FFF1E4_100%)] z-[2]"></div>
+
+            <div className="flex gap-[1rem] z-[1]">
+              {SkillStack.map((skill, index) => (
+                <div key={index} className="h-[10.25rem] w-[10.25rem] tech-skill flex items-center justify-center border border-black rounded-2xl">
+                  <img src={skill.sources} alt={skill.alt} className="w-[9rem] h-[9rem] object-contain" />
+                </div>
+              ))}
+            </div>
+
+            <div className="w-[10.563rem] h-[10.25rem] absolute right-0 bg-[linear-gradient(to_right,_#FFF1E4B8_0%,_#FFF1E4_39%,_#FFF1E4_100%)] z-[2]"></div>
+          </div>
         </div>
       </div>
     </section>
