@@ -6,8 +6,10 @@ import { ScrollTrigger, SplitText } from "gsap/all";
 import Lenis from "lenis";
 import { useEffect } from "react";
 import { SkillStack } from "./techAboutList";
+import { useMediaQuery } from "react-responsive";
 
 const AboutComponent = () => {
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -38,6 +40,41 @@ const AboutComponent = () => {
       repeat: -1,
     });
 
+    // animation about-intro
+    if (!isMobile) {
+      gsap.set(".about-foto", {
+        xPercent: 50,
+        left: "50%",
+      });
+    }
+    gsap.set(".about-detail", {
+      opacity: 0,
+    });
+
+    const textIntroSplit = SplitText.create(".about-intro", {
+      type: "chars",
+    });
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: "#section-about",
+          pin: true,
+          markers: true,
+          scrub: 1.5,
+        },
+      })
+      .to(textIntroSplit.chars, {
+        opacity: 0,
+        stagger: 0.1,
+      })
+      .to(".about-foto", {
+        xPercent: 0,
+        left: "0%",
+      })
+      .to(".about-detail", {
+        opacity: 1,
+      });
+
     const lenis = new Lenis();
     function raf(time: number) {
       lenis.raf(time);
@@ -47,10 +84,11 @@ const AboutComponent = () => {
   }, []);
   return (
     <section className="min-h-[140vh] max-w-screen px-[0.2rem] md:px-[5rem] py-[5rem] md:py-[10rem] grid grid-cols-1 grid-rows-10 md:grid-cols-5 md:grid-rows-5 gap-[1rem] md:gap-[2rem] " id="section-about" wb-section="about">
-      <div className=" row-span-4 md:col-span-2 md:row-span-5 ">
+      <div className="about-foto  row-span-4 md:col-span-2 md:row-span-5 relative">
+        <h1 className="about-intro font-inter font-extrabold text-[1.1rem] md:text-[3.33rem] absolute top-[-15%] w-full text-center">ABOUT ME</h1>
         <img src="./sketsa-foto-portfolio.png" alt="" className=" rounded-xl w-[100%]" />
       </div>
-      <div className="flex flex-col gap-[1rem] md:gap-[2rem] row-span-6 row-start-5 md:col-span-3 md:row-span-5 md:col-start-3 w-[99%]">
+      <div className="about-detail flex flex-col gap-[1rem] md:gap-[2rem] row-span-6 row-start-5 md:col-span-3 md:row-span-5 md:col-start-3 w-[99%]">
         <h1 className=" font-inter font-extrabold text-[1.1rem] md:text-[3.33rem]  reveal-text">Nice to meet you all.</h1>
         <div className=" text-[1rem] md:text-[1.8rem] flex flex-col ap-[0.2rem] md:gap-[1rem] ">
           <p className="reveal-text">I&apos;m Anak Agung, a Full-Stack Developer passionate about building fast, scalable web apps.</p>
