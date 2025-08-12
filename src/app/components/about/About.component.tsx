@@ -59,7 +59,7 @@ const AboutComponent = () => {
         scrollTrigger: {
           trigger: "#section-about",
           pin: true,
-          markers: true,
+          markers: false,
           scrub: 1.5,
         },
       })
