@@ -3,17 +3,21 @@ import { useEffect } from "react";
 import { initTextanimation } from "./animation/text.animation";
 import { initProjectAnimation } from "./animation/project.animation";
 import { projectList } from "./project.config";
-import { useMediaQuery } from "react-responsive";
+import { ScrollTrigger } from "gsap/all";
 
 const ProjectsComponent = () => {
-  const isMobile = useMediaQuery({ maxWidth: 767 });
   useEffect(() => {
     initTextanimation();
-    initProjectAnimation(isMobile);
+    initProjectAnimation();
+
+    return () => {
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
   }, []);
   return (
-    <section id="section-projects" wb-section="projects" className="h-[200vh] md:h-[400vh] relative ">
-      <div className="h-[100%] max-w-screen section-projects z-[1] ">
+    <section id="section-projects" wb-section="projects" className="min-h-[200vh] relative ">
+      {/* text */}
+      <div className="h-[100%] max-w-screen section-projects z-[1]  ">
         <div className=" flex justify-center">
           <div className=" w-[100%] md:w-[83%] leading-tight title-projects">
             <h1 className=" font-black text-[2.4rem] md:text-[8.375rem] text-center reveal-text-projects">LET’S DO THIS TOGETHER</h1>
@@ -21,13 +25,17 @@ const ProjectsComponent = () => {
           </div>
         </div>
       </div>
-      <div className="absolute inset-0 z-[5] top-[20%] md:top-[40%] ">
+      {/* projectlist */}
+      <div className="project-list z-[5] mt-[20%] md:mt-[40%]">
         <div className=" flex flex-col gap-8">
           {projectList.map((pic, index) => (
             <div key={index} className={`flex ${index % 2 == 0 ? "justify-start" : "justify-end"}`}>
-              <div>
-                <img src={`${pic.src}`} className="w-[12rem] md:w-[25rem] h-auto object-contain " />
-                <p>test</p>
+              <div className=" rounded-2xl overflow-hidden w-[12rem] md:w-[38rem]">
+                <img src={`${pic.src}`} className=" h-auto object-contain " />
+                <div className=" bg-transparent backdrop-blur-[10px] px-[1.2rem]">
+                  <h1 className=" font-semibold text-[1.3rem]">Title</h1>
+                  <p className="text-[1.1rem]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti quo, temporibus ut nostrum velit illum exercitationem. Ut aperiam harum labore,</p>
+                </div>
               </div>
             </div>
           ))}
