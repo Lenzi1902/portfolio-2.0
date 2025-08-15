@@ -43,8 +43,8 @@ const AboutComponent = () => {
     // animation about-intro
     if (!isMobile) {
       gsap.set(".about-foto", {
-        xPercent: 50,
-        left: "50%",
+        xPercent: 40,
+        left: "40%",
       });
     }
     gsap.set(".about-detail", {
