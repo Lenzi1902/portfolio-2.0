@@ -84,10 +84,12 @@ const AboutComponent = () => {
   }, []);
   return (
     <section className="min-h-[140vh] max-w-screen px-[0.2rem] md:px-[5rem] py-[5rem] md:py-[10rem] grid grid-cols-1 grid-rows-10 md:grid-cols-5 md:grid-rows-5 gap-[1rem] md:gap-[2rem] " id="section-about" wb-section="about">
+      {/* Foto */}
       <div className="about-foto  row-span-4 md:col-span-2 md:row-span-5 relative">
         <h1 className="about-intro font-inter font-extrabold text-[1.1rem] md:text-[3.33rem] absolute top-[-15%] w-full text-center">ABOUT ME</h1>
         <img src="./sketsa-foto-portfolio.png" alt="" className=" rounded-xl w-[100%]" />
       </div>
+      {/* Detail */}
       <div className="about-detail flex flex-col gap-[1rem] md:gap-[2rem] row-span-6 row-start-5 md:col-span-3 md:row-span-5 md:col-start-3 w-[99%]">
         <h1 className=" font-inter font-extrabold text-[1.1rem] md:text-[3.33rem]  reveal-text">Nice to meet you all.</h1>
         <div className=" text-[1rem] md:text-[1.8rem] flex flex-col ap-[0.2rem] md:gap-[1rem] ">
@@ -95,19 +97,20 @@ const AboutComponent = () => {
           <p className="reveal-text">Currently studying Information Systems, I enjoy working on both front-end and back-end crafting smooth user experiences and robust server logic.</p>
           <p className="reveal-text">Always curious, always learning especially new tools and tech to build better solutions.</p>
         </div>
-        <div className="w-[100%] h-[100%] flex flex-col justify-center">
-          <div className="h-[10.25rem] w-full flex items-center gap-[1rem] relative overflow-hidden">
-            <div className="w-[10.563rem] h-[10.25rem] absolute left-0 bg-[linear-gradient(to_left,_#FFF1E4B8_0%,_#FFF1E4_39%,_#FFF1E4_100%)] z-[2]"></div>
+        {/* Tech */}
+        <div className="w-[100%] h-auto flex flex-col justify-center ">
+          <div className="h-[10.25rem] w-full flex items-center gap-[1rem] relative overflow-hidden ">
+            <div className="w-[5.563rem] md:w-[10.563rem] h-[5.25rem] md:h-[10.25rem] absolute left-0 bg-[linear-gradient(to_left,_#FFF1E4B8_0%,_#FFF1E4_39%,_#FFF1E4_100%)] z-[2]"></div>
 
             <div className="flex gap-[1rem] z-[1]">
               {SkillStack.map((skill, index) => (
-                <div key={index} className="h-[10.25rem] w-[10.25rem] tech-skill flex items-center justify-center border border-black rounded-2xl">
-                  <img src={skill.sources} alt={skill.alt} className="w-[9rem] h-[9rem] object-contain" />
+                <div key={index} className="h-[5.25rem] md:h-[10.25rem] w-[5.25rem] md:w-[10.25rem] tech-skill flex items-center justify-center border border-black rounded-2xl">
+                  <img src={skill.sources} alt={skill.alt} className="w-[80%] h-[80%] md:w-[9rem] md:h-[9rem] object-contain" />
                 </div>
               ))}
             </div>
 
-            <div className="w-[10.563rem] h-[10.25rem] absolute right-0 bg-[linear-gradient(to_right,_#FFF1E4B8_0%,_#FFF1E4_39%,_#FFF1E4_100%)] z-[2]"></div>
+            <div className="w-[5.563rem] md:w-[10.563rem] h-[5.25rem] md:h-[10.25rem] absolute right-0 bg-[linear-gradient(to_right,_#FFF1E4B8_0%,_#FFF1E4_39%,_#FFF1E4_100%)] z-[2]"></div>
           </div>
         </div>
       </div>
