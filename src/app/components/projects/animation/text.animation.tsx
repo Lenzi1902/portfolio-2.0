@@ -1,8 +1,6 @@
-"use client";
 import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
 import { useEffect } from "react";
-// import SplitType from "split-type";
 
 export const InitTextanimation = () => {
   gsap.registerPlugin(ScrollTrigger, SplitText);
