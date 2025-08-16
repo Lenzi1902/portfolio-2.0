@@ -13,22 +13,22 @@ const AboutComponent = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger, SplitText);
 
-    document.querySelectorAll(".reveal-text").forEach((element) => {
-      const split = SplitText.create(element, {
-        type: "chars",
-      });
+    // document.querySelectorAll(".reveal-text").forEach((element) => {
+    //   const split = SplitText.create(element, {
+    //     type: "chars",
+    //   });
 
-      gsap.from(split.chars, {
-        scrollTrigger: {
-          trigger: element,
-          start: "top 80%",
-          end: "top 20%",
-          scrub: true,
-        },
-        opacity: 0.2,
-        stagger: 0.1,
-      });
-    });
+    //   gsap.from(split.chars, {
+    //     scrollTrigger: {
+    //       trigger: element,
+    //       start: "top 80%",
+    //       end: "top 20%",
+    //       scrub: true,
+    //     },
+    //     opacity: 0.2,
+    //     stagger: 0.1,
+    //   });
+    // });
 
     gsap.to(".tech-skill", {
       duration: 60,

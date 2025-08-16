@@ -1,14 +1,22 @@
 "use client";
 import { useEffect } from "react";
-import { initTextanimation } from "./animation/text.animation";
+import { InitTextanimation } from "./animation/text.animation";
 import { initProjectAnimation } from "./animation/project.animation";
 import { projectList } from "./project.config";
 import { ScrollTrigger } from "gsap/all";
+import Lenis from "lenis";
 
 const ProjectsComponent = () => {
   useEffect(() => {
-    initTextanimation();
+    // InitTextanimation();
     initProjectAnimation();
+
+    const lenis = new Lenis();
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
 
     return () => {
       ScrollTrigger.getAll().forEach((t) => t.kill());
@@ -25,6 +33,7 @@ const ProjectsComponent = () => {
           </div>
         </div>
       </div>
+      <InitTextanimation />
       {/* projectlist */}
       <div className="project-list z-[5] mt-[20%] md:mt-[40%]">
         <div className=" flex flex-col gap-8">
