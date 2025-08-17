@@ -11,7 +11,7 @@ export const initProjectAnimation = () => {
       scrub: true,
       pin: ".section-projects",
       pinSpacing: false,
-      markers: true,
+      markers: false,
     },
   });
 
